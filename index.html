@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="ca">
+  <!--això serveix perquè els navegadors sapiguen que el contingut és en català-->
+  <head>
+    <meta charset="UTF-8" />
+    <!--això serveix perq el navegador llegeixi tots els caràcters-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--això serveix perq la pàgina sajusti a lamplada de la pantalla del
+    dispositiu.-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Júlia Camps</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <section class="portada">
+      <!--això és el nom que li he posat a l'apartat de la portada-->
+      <div class="foto_portada">
+        <img
+          src="fotos/definitiva_editada_original.jpg"
+          alt="persona assentada en la foscor amb les mans tapant-se la cara"
+        />
+        <!--l'alt és el text que descriu la foto, no el nom del fitxer-->
+      </div>
+      <h1 class="titol_portada">Júlia Camps</h1>
+      <nav class="menu">
+        <!--nav és perquè diu que això és navegació-->
+        <a href="#destacats">destacats</a>
+        <a href="#galeria">galeria de projectes</a>
+        <a href="#biografia">biografia</a>
+        <a href="#serveis">serveis</a>
+        <a href="#contacte">contacte</a>
+      </nav>
+    </section>
+
+    <section class="projectes-destacats">
+      <h2 class="titol-seccio" id="destacats">Projectes destacats</h2>
+
+      <article class="project">
+        <img src="fotos/Euphoria_bona.jpg" />
+        <div class="content">
+          <h3>Euphoria</h3>
+          <p>
+            L’abril de 2026 se’m va presentar l’oportunitat de participar en un
+            remake d’una escena d’Euphoria, amb els meus companys de classe. Es
+            tracta d’un projecte que comprèn tot el procés d’un rodatge, des de
+            la preproducció fins a la postproducció. En el meu cas, em vaig
+            posar dins el departament d’art, on vaig tenir l’oportunitat de
+            recrear els escenaris que sortien a l’escena escollida.
+          </p>
+        </div>
+      </article>
+
+      <article class="project project--invertit">
+        <img src="fotos/La_Remor_bona.png" />
+        <div class="content">
+          <h3>La Remor</h3>
+          <p>
+            La Remor és un projecte acadèmic que neix de la creació d’un guió
+            sonor amb la Eira Turró. Es va escollir el nostre guió com el més
+            adequat per portar-lo al rodatge. <br />
+            Tot i que era el nostre primer cop dirigint, amb la dedicació de
+            l’equip i el temps invertit amb el projecte va sortir una escena que
+            ens fa sentir orgulloses de la nostra feina.
+          </p>
+        </div>
+      </article>
+
+      <article class="project project--ombra project--fosc">
+        <video
+          src="fotos/videos/marpujol_retallat.MP4"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+        <div class="content">
+          <h3>D'aquesta aigua no en beuré</h3>
+          <p>
+            Durant el setembre i l’octubre de 2026, amb unes companyes de classe
+            vaig estar treballant en un projecte musical de l’artista Mar Pujol.
+            <br />
+            Vam crear els videoclips del disc D’aquesta aigua no en beuré, que
+            va sortir dia 16 d’octubre de 2026. <br />
+            D’aquest projecte van sortir 11 vídeos, un per cada cançó del nou
+            disc de l’artista.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <section class="galeria-de-projectes">
+      <article class="project-galeria" id="galeria">
+        <img
+          src="fotos/benjami_bona.png"
+          alt="mà d'una persona gran pintant un quadre"
+        />
+        <video
+          src="fotos/videos/benjami_video_hover.MP4"
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        ></video>
+      </article>
+      <article class="project-galeria">
+        <img
+          src="fotos/eira_bona.png"
+          alt="persona davant d'una càmera amb una llum vermella que li il·lumina la cara"
+        />
+        <video
+          src="fotos/videos/eira_video_hover.MP4"
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        ></video>
+      </article>
+      <article class="project-galeria">
+        <img
+          src="fotos/normal_people_bona.png"
+          alt="dues persones assentades al terra, un davant l'altre però sense mirar-se"
+        />
+        <video
+          src="fotos/videos/normal_people_video_hover.MP4"
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        ></video>
+      </article>
+      <article class="project-galeria">
+        <img
+          src="fotos/cmbyn_bona.png"
+          alt="persona fent claqueta, dos personatges estirats a la gespa, micro de canó captant el so"
+        />
+        <video
+          src="fotos/videos/cmbyn_video_hover.MP4"
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        ></video>
+      </article>
+    </section>
+
+    <section class="biografia" id="biografia">
+      <div class="foto_biografia">
+        <img
+          src="fotos/foto_biografia_bona.PNG"
+          alt="primer pla del rostre d'una persona en la foscor, il·luminat amb llum taronja"
+        />
+      </div>
+      <h2 class="titol_biografia">Biografia</h2>
+      <div class="text_biografia">
+        <p>Estudiant de Comunicació Audiovisual i Multimèdia.</p>
+        <p>
+          Nascuda a Ciutadella de Menorca (2007) i establerta a Girona, cursant
+          actualment segon del grau en Comunicació Audiovisual i Multimèdia a
+          l’Escola Universitària de les Arts ERAM.
+        </p>
+        <p>
+          Durant la meva formació he participat en rodatges acadèmics en
+          diversos departaments, com ara art, so i il·luminació, cosa que m’ha
+          donat una visió pràctica del procés de producció audiovisual.
+        </p>
+        <p>
+          Domino la fotografia, l’edicio d’imatge, el muntatge de vídeo i el
+          disseny gràfic.
+        </p>
+      </div>
+    </section>
+    <section class="serveis" id="serveis">
+      <div class="serveis_cards">
+        <span class="etiqueta etiqueta_muntatge">muntatge</span>
+        <span class="etiqueta etiqueta_direccio">direcció d'art</span>
+        <span class="etiqueta etiqueta_produccio">producció</span>
+        <span class="etiqueta etiqueta_fotografia">fotografia</span>
+        <span class="etiqueta etiqueta_disseny">disseny gràfic</span>
+      </div>
+    </section>
+    <section class="contacte" id="contacte">
+      <div class="foto_contacte">
+        <img
+          src="fotos/foto_contacte.png"
+          alt="persona dreta en una sala fosca il·luminada amb llum taronja, amb una càmera de vídeo al costat"
+        />
+      </div>
+      <h2 class="titol_contacte">Contacte</h2>
+      <p class="contacte_instagram">
+        instagram:
+        <a href="https://www.instagram.com/juliakmps/">@juliakmps</a>
+      </p>
+      <p class="contacte_telefon">telèfon: +34 653 68 64 02</p>
+      <p class="contacte_gmail">
+        gmail:
+        <a href="mailto:campspirisjulia@gmail.com">campspirisjulia@gmail.com</a>
+      </p>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>

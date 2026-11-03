@@ -1,0 +1,642 @@
+/* Treu els espais que el navegador posa per defecte a tots els elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --taronja: #ff6600;
+  --blau: #0353a4;
+  --background-color: #7ec1ff;
+  --black: #000000;
+}
+
+/*SECTION PORTADA PORFOLI*/
+
+body {
+  background-color: var(--background-color);
+  font-family: "Host Grotesk", sans-serif;
+}
+
+.portada {
+  position: relative;
+  height: calc(
+    100vh + 11.3vw
+  ); /*1vw és l’1% de l’ample de la pantalla, només s'han de dividit els pixels per (1728 / 100), ques el total de l'ample de la pantalla*/
+}
+
+.foto_portada {
+  height: 100%; /* la foto ocupa tota l'alçada de la portada */
+  overflow: hidden; /* això fa que la foto es quedi dins els borders que hem fet*/
+}
+
+.foto_portada img {
+  width: 100%;
+  height: 100%; /* s'adapta a l'alçada de la portada */
+  display: block;
+  object-fit: cover;
+  object-position: center bottom; /* si s'ha de retallar, es talla per dalt i no pels peus */
+}
+
+.titol_portada {
+  position: absolute; /*això siginfica que es posa a sobre la foto*/
+  left: 2.9vw; /* 50px Figma */
+  bottom: 11.2vw; /*193px Figma*/
+  white-space: nowrap;
+  font-family: "Host Grotesk";
+  font-size: 8.7vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  color: var(--taronja);
+  -webkit-text-stroke-width: 0.23vw; /*4px Figma*/
+  -webkit-text-stroke-color: var(--blau, #0353a4);
+}
+
+/*menú*/
+
+.menu {
+  position: absolute; /*es posa damunt la foto*/
+  right: 6.6%; /*114/1728 x 100*/
+  left: 6.6%;
+  bottom: 4.15%; /*53px/1277 alçada x 100*/
+  display: flex; /*posa les coses en fila*/
+  justify-content: space-between;
+}
+
+.menu a {
+  font-size: 2.6vw; /* 45px del Figma */
+  font-weight: 400;
+  color: var(--taronja);
+  text-decoration: none; /*treu els estils que surten per defecte*/
+  -webkit-text-stroke: 1px transparent;
+  text-shadow: 0 4px 4px transparent;
+  transition: all 0.4s ease-out;
+}
+
+.menu a:hover {
+  -wekbit-text-stroke-color: var var(--blau); /*la stroke al voltant del text*/
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); /*la ombra sota el text*/
+}
+
+.menu a:hover {
+  -webkit-text-stroke-color: var(--blau); /* la vora blava del Figma */
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); /* l'ombra del Figma */
+}
+
+/* SECTION PROJECTES DESTACATS */
+
+.projectes-destacats {
+  padding: 345px 2.9%; /*50/1728 que és l'amplada, aixi s'escala*/
+}
+
+h2.titol-seccio {
+  color: var(--taronja, #f60);
+  -webkit-text-stroke-width: 4px;
+  -webkit-text-stroke-color: var(--blau, #0353a4);
+  paint-order: stroke fill; /*això significa que la stroke es dibuixa abans del text */
+  font-family: "Host Grotesk";
+  font-size: 8.7vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  text-align: center; /* el text al mig de l'amplada de la secció */
+  margin-bottom: 55px;
+}
+
+.project h3 {
+  align-self: flex-start; /* el títol va a l'esquerra */
+  font-size: 8.4vw;
+  font-weight: 600;
+  text-align: left;
+  line-height: normal;
+}
+
+.project {
+  position: relative;
+}
+
+.projectes-destacats .project {
+  aspect-ratio: 1628 / 1117; /*totes les targetes tenen la mateixa forms*/
+  overflow: hidden;
+}
+
+.project img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.project video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project .content {
+  position: absolute;
+  padding: 60px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+  flex-direction: column;
+  z-index: 2; /* per damunt de l'ombra, perquè la ombra no tapi el text */
+  justify-content: space-between;
+  color: var(--background-color);
+}
+
+.project p {
+  align-self: flex-end; /* el paràgraf va a la dreta */
+  font-size: 2vw; /*35 /  1728 × 100 = 2vw*/
+  font-weight: 500;
+  text-align: right;
+  line-height: normal;
+  max-width: 79%;
+}
+
+/*el que vull és que LA REMOR tengui els valors invertits del p i del titol de projectes destacats*/
+.project--invertit h3 {
+  align-self: flex-end; /* el títol passa a la dreta */
+  text-align: right;
+}
+
+.project--invertit p {
+  align-self: flex-start; /* el paràgraf passa a l'esquerra */
+  text-align: left;
+}
+
+/*OMBRA per enfosquir el video MARPUJOL i que es vegi millor el text*/
+.project--ombra::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /*la ombra per damunt del vídeo*/
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.8) 31.4%,
+    rgba(0, 0, 0, 0) 47.6%
+  );
+}
+
+.project--fosc video {
+  filter: brightness(0.5);
+}
+
+/*SECTION GALERIA DE PROJECTES*/
+
+.galeria-de-projectes {
+  padding: 380px 0; /* dalt i baix 380px, costats 0 */
+  display: flex;
+  flex-direction: column; /* una imatge devall s'altra */
+  align-items: center; /* les centra horitzontalment */
+  gap: 80px;
+}
+
+.project-galeria {
+  position: relative; /*on es col·loca la foto i el video*/
+  width: 73.5%; /*1270 / 1728*/
+  aspect-ratio: 1270 / 661; /*la forma de les imatges*/
+  overflow: hidden; /* això fa que la foto es quedi dins els borders que hem fet*/
+  scroll-margin-top: 4.6vw; /* afagesc un marge a dalt quan arribes des del menú */
+}
+
+.project-galeria img,
+.project-galeria video {
+  position: absolute; /*la foto i el video es posen un damunt s'altre*/
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /*omple la caixa sense deformar el contingut*/
+  display: block;
+}
+
+.project-galeria video {
+  opacity: 0; /* el vídeo és invisible de base, és a dir, quan no es fa hover */
+  transition: opacity 0.4s ease-out; /*això és la transició que tenc al figma*/
+}
+
+.project-galeria:hover video {
+  opacity: 1; /* en passar-hi el ratolí, fer hover, el vídeo es veu */
+}
+
+/*SECCIÓ BIOGRAFIA*/
+
+.biografia {
+  position: relative;
+  aspect-ratio: 1728 / 1245;
+  overflow: hidden;
+}
+
+.foto_biografia {
+  position: absolute;
+  top: 0;
+  left: -9.03%; /* -156px / 1728px */
+  width: 118.2%; /* 2042px / 1728px */
+  height: 100%;
+}
+
+.foto_biografia img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+/*per fer la ombra degradada cap a fosc a la dreta, perquè el text es llegeixi millor */
+.foto_biografia::after {
+  content: "";
+  position: absolute;
+  inset: 0; /*això significa que el degradat ocupa tota la foto*/
+  background: linear-gradient(
+    90deg,
+    rgba(54, 54, 54, 0) 36.879%,
+    rgba(0, 0, 0, 0.5) 73.75%
+  );
+}
+
+.titol_biografia {
+  position: absolute;
+  left: 3.5%; /* 61px / 1728px */
+  top: 5.6%; /* 70px / 1245px */
+  z-index: 1; /* per damunt del degradat i de la foto*/
+  font-size: 8.7vw; /* 150px Figma */
+  font-weight: 600;
+  line-height: normal;
+  color: var(--taronja);
+  -webkit-text-stroke-width: 0.23vw; /*equival a 4px del figma*/
+  -webkit-text-stroke-color: var(--blau);
+  paint-order: stroke fill;
+  white-space: nowrap;
+}
+
+.text_biografia {
+  position: absolute;
+  left: 47.3%; /* 818px / 1728px figma*/
+  top: 39.6%; /* 493px / 1245px figma*/
+  width: 47.9%; /* 828px / 1728px figma*/
+  z-index: 1;
+  font-size: 2vw; /* 35px figma */
+  font-weight: 500;
+  line-height: normal;
+  color: var(--taronja);
+}
+
+/*per fer els enters que hi ha entre cada paràgraf del text*/
+.text_biografia p + p {
+  margin-top: 1.2em;
+}
+
+/*SECCIÓ SERVEIS*/
+
+.serveis {
+  background: var(--background-color);
+  padding: 9.2vw 0 14vw 19.44vw; /* 336px d'esquerra, 159px per sobre (1728px d'ample) */
+  position: relative;
+}
+
+.serveis_cards {
+  position: relative;
+  width: 1056px;
+  height: 926px;
+}
+
+.etiqueta {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10.713vw; /* 185px figma */
+  padding: 0.513vw 2.329vw; /* 9px 40px figma */
+  background: var(--taronja);
+  border: 0.355vw solid var(--blau); /* 6px figma */
+  border-radius: 2.21vw; /* 38px figma */
+  color: var(--blau);
+  font-family: "Host Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 3.903vw; /* 67px figma */
+  line-height: normal;
+  white-space: nowrap;
+  transform: translate(-50%, -50%) rotate(var(--rot));
+}
+
+.etiqueta_muntatge {
+  left: 19.15vw;
+  top: 6.31vw;
+  --rot: 3.71deg;
+}
+
+.etiqueta_direccio {
+  left: 37.28vw;
+  top: 16.37vw;
+  --rot: -0.88deg;
+}
+
+.etiqueta_produccio {
+  left: 19.93vw;
+  top: 27.76vw;
+  --rot: 3.62deg;
+}
+
+.etiqueta_fotografia {
+  left: 41.34vw;
+  top: 38.87vw;
+  --rot: -5.19deg;
+}
+
+.etiqueta_disseny {
+  left: 25.21vw;
+  top: 49.48vw;
+  --rot: 3.52deg;
+}
+
+/*SECCIÓ CONTACTE*/
+.contacte {
+  position: relative;
+  aspect-ratio: 1728 / 1245;
+  overflow: hidden;
+}
+
+.foto_contacte {
+  position: absolute;
+  inset: 0; /* això fa que la foto ocupi tota la secció */
+}
+
+.foto_contacte img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.titol_contacte {
+  position: absolute;
+  left: 76.16%; /* 1316px / 1728px */
+  top: 21.2%; /* 264px / 1245px */
+  transform: translate(-50%, -50%); /* perquè left i top marquin el centre */
+  z-index: 1;
+  font-size: 8.7vw; /* 150px figma */
+  font-weight: 600;
+  line-height: normal;
+  color: var(--taronja);
+  -webkit-text-stroke-width: 0.23vw; /* 4px figma */
+  -webkit-text-stroke-color: var(--blau);
+  paint-order: stroke fill;
+}
+
+.contacte_instagram,
+.contacte_telefon,
+.contacte_gmail {
+  position: absolute;
+  left: 6.54%; /* 113px / 1728px */
+  z-index: 1;
+  font-size: 2.6vw; /* 45px figma */
+  font-weight: 400;
+  line-height: normal;
+  color: var(--taronja);
+  white-space: nowrap;
+}
+
+.contacte_instagram {
+  top: 66.5%; /* 828px / 1245px */
+}
+
+.contacte_telefon {
+  top: 76.1%; /* 947px / 1245px */
+}
+
+.contacte_gmail {
+  top: 85.7%; /* 1067px / 1245px */
+}
+
+.contacte a {
+  color: var(--taronja);
+  text-decoration: underline;
+  text-decoration-color: var(--blau);
+  text-underline-offset: 0.23vw; /* 4px figma */
+}
+
+/*MOBILE*/
+/* RESPONSIVE: MÒBIL */
+@media (max-width: 768px) {
+  /* PORTADA */
+  .titol_portada {
+    left: 5vw;
+    bottom: 54vw; /* per sobre del menú, que ara va en columna */
+    font-size: 14vw;
+    -webkit-text-stroke-width: 2px;
+  }
+
+  .menu {
+    left: 5vw;
+    right: 5vw;
+    bottom: 5vw;
+    flex-direction: column; /* els enllaços un sota l'altre */
+    align-items: flex-start;
+    gap: 1.5vw;
+  }
+
+  .menu a {
+    font-size: 6.5vw;
+  }
+
+  /* PROJECTES DESTACATS */
+  .projectes-destacats {
+    padding: 100px 5%;
+  }
+
+  h2.titol-seccio {
+    font-size: 13vw;
+    -webkit-text-stroke-width: 2px;
+    margin-bottom: 30px;
+  }
+
+  .projectes-destacats .project {
+    aspect-ratio: 3 / 4; /* targeta més alta perquè hi càpiga el text */
+  }
+
+  .project img {
+    object-fit: cover; /* perquè la foto no es deformi amb la nova proporció */
+  }
+
+  .project .content {
+    padding: 20px;
+  }
+
+  .project h3 {
+    font-size: 9vw;
+  }
+
+  .project p {
+    font-size: 3.5vw;
+    max-width: 100%;
+  }
+
+  /* ombra més alta perquè el text, que ara ocupa més, es llegeixi bé */
+  .project--ombra::before {
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.8) 45%,
+      rgba(0, 0, 0, 0) 75%
+    );
+  }
+
+  /* GALERIA */
+  .galeria-de-projectes {
+    padding: 100px 0;
+    gap: 24px;
+  }
+
+  .project-galeria {
+    width: 92%;
+  }
+
+  /* BIOGRAFIA: el títol i el text van un sota l'altre */
+  .biografia {
+    aspect-ratio: auto; /* l'alçada la marca el contingut */
+    padding: 70px 6% 60px;
+  }
+
+  .foto_biografia {
+    left: 0;
+    width: 100%;
+  }
+
+  /* ombra a tot el fons perquè el text es llegeixi */
+  .foto_biografia::after {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+  }
+
+  .titol_biografia,
+  .text_biografia {
+    position: relative; /* deixen d'estar posats a mà */
+    left: auto;
+    top: auto;
+  }
+
+  .titol_biografia {
+    font-size: 15vw;
+    -webkit-text-stroke-width: 2px;
+    margin-bottom: 30px;
+  }
+
+  .text_biografia {
+    width: 100%;
+    font-size: 4.6vw;
+  }
+
+  /* SERVEIS: etiquetes en columna, encara inclinades */
+  .serveis {
+    padding: 80px 5%;
+  }
+
+  .serveis_cards {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .etiqueta {
+    position: static; /* ja no es posicionen a mà */
+    width: auto;
+    height: auto;
+    padding: 10px 28px;
+    border-width: 3px;
+    border-radius: 22px;
+    font-size: 9vw;
+    transform: rotate(var(--rot)); /* ja no cal el translate */
+  }
+
+  /* CONTACTE */
+  .contacte {
+    aspect-ratio: auto;
+    height: 100vh;
+    height: 100svh; /* alçada real al mòbil, sense comptar la barra del navegador */
+    min-height: 560px;
+  }
+
+  .titol_contacte {
+    left: 50%;
+    top: 16%;
+    font-size: 15vw;
+    -webkit-text-stroke-width: 2px;
+  }
+
+  .contacte_instagram,
+  .contacte_telefon,
+  .contacte_gmail {
+    left: 6%;
+    font-size: 5vw;
+  }
+
+  .contacte_instagram {
+    top: 62%;
+  }
+
+  .contacte_telefon {
+    top: 71%;
+  }
+
+  .contacte_gmail {
+    top: 80%;
+    font-size: 4.2vw; /* el correu és llarg i ha de cabre */
+  }
+
+  .contacte a {
+    text-underline-offset: 2px;
+  }
+}
+
+/*CURSOR PERSONALITZAT JAVASCRIPT*/
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  background: var(--taronja);
+  border: 3px solid var(--blau);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.3s ease-out,
+    height 0.3s ease-out;
+}
+
+.cursor.gran {
+  width: 56px;
+  height: 56px;
+}
+
+@media (hover: hover) {
+  body,
+  a {
+    cursor: none;
+  }
+}
+
+@media (hover: none) {
+  .cursor {
+    display: none;
+  }
+}
